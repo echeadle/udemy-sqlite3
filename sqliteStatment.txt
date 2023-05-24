@@ -35,3 +35,66 @@ sqlite> CREATE TABLE contact_groups (
    ...> ON DELETE CASCADE on UPDATE NO ACTION
    ...> );
 
+INSERT INTO contacts (first_name, last_name, email, phone)
+   ...> VALUES('Jonny', 'cash', 'jonny@mycash.com', 4412345631);
+INSERT INTO contacts (first_name, last_name, email, phone)
+   ...> VALUES('Jane', 'Doe', 'jane@doe.com', 33333335631);
+
+sqlite> SELECT *
+   ...> FROM contacts;
+
+sqlite> INSERT INTO groups(name)
+   ...> VALUES ('Cash flow');
+
+sqlite> INSERT INTO groups(name)
+   ...> VALUES ('Accounts');
+sqlite> SELECT * FROM groups;
+
+sqlite> UPDATE contacts
+   ...> SET last_name = "Johnson"
+   ...> WHERE contact_id = 2;
+ 
+sqlite> SELECT * FROM contacts;
+
+sqlite> DELETE
+   ...> FROM groups
+   ...> WHERE group_id =2;
+sqlite> SELECT * FROM groups
+
+sqlite> SELECT
+   ...> invoiceid,
+   ...> billingaddress,
+   ...> total
+   ...> FROM
+   ...> invoices
+   ...> WHERE
+   ...> total BETWEEN 14.91 and 18.95
+   ...> ORDER BY total;
+
+sqlite> SELECT
+   ...> trackid,
+   ...> name,
+   ...> mediatypeid
+   ...> FROM
+   ...> tracks
+   ...> WHERE
+   ...> mediatypeid IN (1, 2)
+   ...> ORDER BY
+   ...> name ASC;
+
+
+sqlite> SELECT
+   ...> trackid,
+   ...> name
+   ...> FROM
+   ...> tracks
+   ...> WHERE
+   ...> name LIKE 'Wild%'
+
+sqlite> SELECT
+   ...> trackid,
+   ...> name
+   ...> FROM
+   ...> tracks
+   ...> WHERE
+   ...> name GLOB 'Man*';
