@@ -163,3 +163,4 @@ cython_debug/
 *.db
 *.zip
 *.sql
+*.swp
