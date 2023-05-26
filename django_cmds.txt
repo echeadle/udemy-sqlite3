@@ -1,0 +1,7 @@
+
+python manage.py
+    
+        migrate
+        makemigrations
+        sqlmigrate
+        showmigrations
